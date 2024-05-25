@@ -1,0 +1,35 @@
+{
+    "seeds" : [
+        "https://www.thomasnet.com/browsecompanies.html",
+        "https://www.thomasnet.com/browsecompanies.html/?letter=9",
+        "https://www.thomasnet.com/browsecompanies.html/?letter=A",
+        "https://www.thomasnet.com/browsecompanies.html/?letter=B",
+        "https://www.thomasnet.com/browsecompanies.html/?letter=C",
+        "https://www.thomasnet.com/browsecompanies.html/?letter=D",
+        "https://www.thomasnet.com/browsecompanies.html/?letter=E",
+        "https://www.thomasnet.com/browsecompanies.html/?letter=F",
+        "https://www.thomasnet.com/browsecompanies.html/?letter=G",
+        "https://www.thomasnet.com/browsecompanies.html/?letter=H",
+        "https://www.thomasnet.com/browsecompanies.html/?letter=I",
+        "https://www.thomasnet.com/browsecompanies.html/?letter=J",
+        "https://www.thomasnet.com/browsecompanies.html/?letter=K",
+        "https://www.thomasnet.com/browsecompanies.html/?letter=L",
+        "https://www.thomasnet.com/browsecompanies.html/?letter=M",
+        "https://www.thomasnet.com/browsecompanies.html/?letter=N",
+        "https://www.thomasnet.com/browsecompanies.html/?letter=O",
+        "https://www.thomasnet.com/browsecompanies.html/?letter=P",
+        "https://www.thomasnet.com/browsecompanies.html/?letter=R",
+        "https://www.thomasnet.com/browsecompanies.html/?letter=S",
+        "https://www.thomasnet.com/browsecompanies.html/?letter=T",
+        "https://www.thomasnet.com/browsecompanies.html/?letter=U",
+        "https://www.thomasnet.com/browsecompanies.html/?letter=W",
+        "https://www.thomasnet.com/browsecompanies.html/?letter=X",
+        "https://www.thomasnet.com/browsecompanies.html/?letter=Y",
+        "https://www.thomasnet.com/browsecompanies.html/?letter=Z",
+        "https://www.linkedin.com/company/microsoft/"
+    ],
+    "url" : [
+        "https://en.wikipedia.org/wiki/Wikipedia:Contents/A%E2%80%93Z_index",
+        "https://tr.wikipedia.org/wiki/Vikipedi:Dizin"
+    ]
+}

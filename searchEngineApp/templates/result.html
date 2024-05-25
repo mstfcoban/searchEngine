@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Untree.co" />
+    <link rel="shortcut icon" href="favicon.png" />
+
+    <meta name="description" content="" />
+    <meta name="keywords" content="bootstrap, bootstrap5" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="{%static 'fonts/icomoon/style.css'%}" />
+    <link rel="stylesheet" href="{%static 'fonts/flaticon/font/flaticon.css'%}" />
+
+    <link rel="stylesheet" href="{%static 'css/tiny-slider.css'%}" />
+    <link rel="stylesheet" href="{%static 'css/aos.css'%}" />
+    <link rel="stylesheet" href="{%static 'css/style.css'%}" />
+
+    <title>
+      COsea - Search Company
+    </title>
+  </head>
+
+  <body>
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close">
+          <span class="icofont-close js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+    <nav class="site-nav">
+      <div class="container">
+        <div class="menu-bg-wrap">
+          <div class="site-navigation">
+            <a href="/" class="logo m-0 float-start">COsea</a>
+            <ul  class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end" >
+              <li class="active"><a href="/">Home</a></li>
+              <li><a href="/#about">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="hero" style="height:50vh">
+      <div class="hero-slide">
+        <!--div class="img overlay" style="background-image: url('{%static 'images/hero_bg_3.jpg' %}')"></div-->
+        <video class="overlay" autoplay muted loop id="myVideo" style="width:auto; height:100vh;">
+          <source src="{%static 'images/background-video-2.mp4' %}" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+      <div class="container">
+        <div class="row justify-content-center align-items-center" style="height:50vh">
+          <div class="col-lg-9 text-center">
+            <h1 class="heading" data-aos="fade-up">
+              Easiest way to find Company
+            </h1>
+            <form action="/result/" method="get" class="narrow-w form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200" >
+              <input id="searchCompany" type="text"  class="form-control px-4" name="search" placeholder="Search Compoany"/>
+              <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="features-1 company-list">
+      <div class="container">
+        <div class="row">
+          {% for x in data %}
+            <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+              <div class="box-feature">
+                <span class="flaticon-house"></span>
+                <h3 class="overflow-hidden mb-3" style="height:40px; line-height:20px; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical;">{{ x.title }}</h3>
+                <p class="overflow-hidden" style="height:80px; line-height:20px; display:-webkit-box; -webkit-line-clamp:4; -webkit-box-orient:vertical;">{{ x.description }}</p>
+                <p><a href="https://{{ x.domain }}" target="_blank" class="learn-more">Go To Page</a></p>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <div class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="widget">
+              <h3>Contact</h3>
+              <ul class="list-unstyled links">
+                <li>
+                  <a href="mailto:mustafacoban@hacettepe.edu.tr">mustafacoban@hacettepe.edu.tr</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="widget">
+              <h3>Sources</h3>
+              <ul class="list-unstyled float-start links">
+                <li><a href="#">About us</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="widget">
+              <h3>Links</h3>
+              <ul class="list-unstyled links">
+                <li><a href="#">About us</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Preloader -->
+    <div id="overlayer"></div>
+    <div class="loader">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+
+    <script src="{%static 'js/bootstrap.bundle.min.js'%}"></script>
+    <script src="{%static 'js/tiny-slider.js'%}"></script>
+    <script src="{%static 'js/aos.js'%}"></script>
+    <script src="{%static 'js/navbar.js'%}"></script>
+    <script src="{%static 'js/counter.js'%}"></script>
+    <script src="{%static 'js/custom.js'%}"></script>
+  </body>
+</html>
