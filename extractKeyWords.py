@@ -1,8 +1,6 @@
-#import spacy
 import yake
 import wordsegment
 
-#nlp = spacy.load("en_core_web_lg")
 wordsegment.load()
 
 max_ngram_size = 3
@@ -12,7 +10,6 @@ windowSize = 1
 numOfKeywords = 10
 
 def extractKeyWords(text, is_url = False):
-    #keyWords = nlp(text)
 
     if is_url:
         url_words = wordsegment.segment(text)

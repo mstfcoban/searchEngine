@@ -172,27 +172,25 @@ def rankeAlgo(word, data):
     return similarities
 def Ner(data):
     isCompany = False
-    places = set()
 
     doc_title = nlp(data['title'])
     doc_description = nlp(data['description'])
 
-    for k in doc_title.ents:
-        if new_word in k.text.lower() and k.label_ == 'ORG':
-            isCompany = True
-        if k.label_ == 'GPE' or k.label_ == 'LOC':
-            places.add(k.text)
+    label_title = [e.label_ for e in doc_title.ents]
+    text_title = [e.text.lower() for e in doc_title.ents]
+    label_description = [e.label_ for e in doc_description.ents]
+    text_description = [e.text.lower() for e in doc_description.ents]
 
-    for k in doc_description.ents:
-        if new_word in k.text.lower() and k.label_ == 'ORG':
-            isCompany = True
-        if k.label_ == 'GPE' or k.label_ == 'LOC':
-            places.add(k.text)
+    if 'ORG' in label_title and 'ORG' in label_description:
+        isCompany = True
+
+    """for k in text_title:
+        if new_word not in k:
+            isCompany = False
+    for k in text_description:
+        if new_word not in k:
+            isCompany = False"""
 
     return {
         'isCompany': isCompany,
-        'places': places
     }
-
-def findRealUrl():
-    print(1)

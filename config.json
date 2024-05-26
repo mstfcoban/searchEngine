@@ -1,6 +1,12 @@
 {
     "seeds" : [
         "https://www.thomasnet.com/browsecompanies.html",
+
+        "https://www.linkedin.com/company/microsoft/"
+    ],
+    "url" : [
+        "https://en.wikipedia.org/wiki/Wikipedia:Contents/A%E2%80%93Z_index",
+        "https://tr.wikipedia.org/wiki/Vikipedi:Dizin",
         "https://www.thomasnet.com/browsecompanies.html/?letter=9",
         "https://www.thomasnet.com/browsecompanies.html/?letter=A",
         "https://www.thomasnet.com/browsecompanies.html/?letter=B",
@@ -25,11 +31,6 @@
         "https://www.thomasnet.com/browsecompanies.html/?letter=W",
         "https://www.thomasnet.com/browsecompanies.html/?letter=X",
         "https://www.thomasnet.com/browsecompanies.html/?letter=Y",
-        "https://www.thomasnet.com/browsecompanies.html/?letter=Z",
-        "https://www.linkedin.com/company/microsoft/"
-    ],
-    "url" : [
-        "https://en.wikipedia.org/wiki/Wikipedia:Contents/A%E2%80%93Z_index",
-        "https://tr.wikipedia.org/wiki/Vikipedi:Dizin"
+        "https://www.thomasnet.com/browsecompanies.html/?letter=Z"
     ]
 }

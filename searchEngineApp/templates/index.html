@@ -4,18 +4,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="Untree.co" />
-    <link rel="shortcut icon" href="favicon.png" />
 
-    <meta name="description" content="" />
-    <meta name="keywords" content="bootstrap, bootstrap5" />
+    <meta name="description" content="Search Company" />
+    <meta name="keywords" content="company, business" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 
     <link rel="stylesheet" href="{%static 'fonts/icomoon/style.css'%}" />
     <link rel="stylesheet" href="{%static 'fonts/flaticon/font/flaticon.css'%}" />
@@ -23,12 +18,14 @@
     <link rel="stylesheet" href="{%static 'css/tiny-slider.css'%}" />
     <link rel="stylesheet" href="{%static 'css/aos.css'%}" />
     <link rel="stylesheet" href="{%static 'css/style.css'%}" />
-
-    <title>
-      COsea - Search Company
-    </title>
+    <link rel="icon" type="image/x-icon" href="{%static 'images/cosea-logo.png'%}">
+    <title>COsea - Search Company</title>
   </head>
   <body>
+
+    <!--script async src="https://cse.google.com/cse.js?cx=f7fe1d684e61f4248"> </script>
+    <div class="gcse-search"></div-->
+
     <div class="site-mobile-menu site-navbar-target">
       <div class="site-mobile-menu-header">
         <div class="site-mobile-menu-close">
@@ -54,7 +51,6 @@
 
     <div class="hero" style="height:auto">
       <div class="hero-slide">
-        <!--div class="img overlay" style="background-image: url('{%static 'images/hero_bg_3.jpg' %}')"></div-->
         <video class="overlay" autoplay muted loop id="myVideo" style="width:auto; height:100vh;">
           <source src="{%static 'images/background-video-2.mp4' %}" type="video/mp4">
           Your browser does not support HTML5 video.
@@ -68,7 +64,7 @@
               Easiest way to find Company
             </h1>
             <form action="/result/" method="get" class="narrow-w form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200" >
-              <input id="searchCompany" type="text"  class="form-control px-4" name="search" placeholder="Search Compoany" />
+              <input id="searchCompany" type="text"  class="form-control px-4" name="search" value="{{word}}" placeholder="Search Company" />
               <button type="submit" class="btn btn-primary">Search</button>
             </form>
           </div>
@@ -110,6 +106,9 @@
         <div class="mb-3 align-items-center">
           Perhaps the future should include expanding the dataset, improving the algorithms and integrating machine learning models to further improve the search capabilities.
         </div>
+        <video class="" controls="controls"  style="width:100%;">
+            <source src="{%static 'images/tanitim.mp4' %}" type="video/mp4">
+          </video>
       </div>
     </div>
 
@@ -118,46 +117,38 @@
         <div class="row">
           <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
             <div class="box-feature">
-              <span class="flaticon-house"></span>
-              <h3 class="mb-3">Our Properties</h3>
+              <img src="{%static 'images/nlp.png'%}" title="nlp" style="height: 70px;">
+              <h3 class="mb-3">NLP</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Voluptates, accusamus.
+                Natural language processing methods were used to increase accuracy
               </p>
-              <p><a href="#" class="learn-more">Learn More</a></p>
             </div>
           </div>
           <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="500">
             <div class="box-feature">
-              <span class="flaticon-building"></span>
-              <h3 class="mb-3">Property for Sale</h3>
+              <img src="{%static 'images/relations.png'%}" title="relations" style="height: 70px;">
+              <h3 class="mb-3"> Relevance </h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Voluptates, accusamus.
+                Evaluated the relationship between the searched query using TF-IDF and BM-25
               </p>
-              <p><a href="#" class="learn-more">Learn More</a></p>
             </div>
           </div>
           <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
             <div class="box-feature">
-              <span class="flaticon-house-3"></span>
-              <h3 class="mb-3">Real Estate Agent</h3>
+              <img src="{%static 'images/web.png'%}" title="web" style="height: 70px;">
+              <h3 class="mb-3">Crawler</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Voluptates, accusamus.
+                The web world was scanned with the created crawler and presented to users.
               </p>
-              <p><a href="#" class="learn-more">Learn More</a></p>
             </div>
           </div>
           <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="600">
             <div class="box-feature">
-              <span class="flaticon-house-1"></span>
-              <h3 class="mb-3">House for Sale</h3>
+              <img src="{%static 'images/search.png'%}" title="search" style="height: 70px;">
+              <h3 class="mb-3">Google</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Voluptates, accusamus.
+                Additionally, the results and data found are strengthened with Google support.
               </p>
-              <p><a href="#" class="learn-more">Learn More</a></p>
             </div>
           </div>
         </div>
@@ -167,15 +158,16 @@
     <div class="section">
       <div class="row justify-content-center footer-cta" data-aos="fade-up">
         <div class="col-lg-7 mx-auto text-center">
-          <h2 class="mb-4">Be a part of our growing real state agents</h2>
-          <p>
-            <a
-              href="#"
-              target="_blank"
-              class="btn btn-primary text-white py-3 px-4"
-              >Apply for Real Estate agent</a
-            >
-          </p>
+          <h2 class="mb-4">Poster</h2>
+          <div>
+            <!--img src="{%static 'images/cosea-poster-1.png'%}" alt="Image" class="img-fluid m-0"/--->
+            <video class="" autoplay muted loop  style="width:100%;">
+              <source src="{%static 'images/cosea-poster-3.mp4' %}" type="video/mp4">
+            </video>
+          </div>
+          <div>
+
+          </div>
         </div>
         <!-- /.col-lg-7 -->
       </div>

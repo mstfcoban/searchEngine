@@ -28,8 +28,7 @@ class ExtraxtPage():
         path = urlparse(self.response.url).path or ''
         title = self.response.css('title::text').get() if self.response.css('title::text').get() else ''
         description = self.response.css('meta[name=description]::attr(content)').get() if self.response.css('meta[name=description]::attr(content)').get() else ''
-        h1 = self.response.css('h1::text').getall()
-        parent = self.response.request.headers.get('Referer', None).decode()
+        parent = self.response.request.headers.get('Referer', None).decode() if self.response.request.headers.get('Referer', None) else ''
         level = self.response.request.meta.get('depth')
         keywords = {
             'url': keywords_url,
@@ -38,20 +37,20 @@ class ExtraxtPage():
             'description': [x.lower() for x in description_keywords],
             'description_value': description_value,
         }
+        imagedata = []
 
         for image in self.response.css('img'):
-            imagedata = {
-                'url': self.response.urljoin(image.attrib['src']) or '',
+            imagedata.append({
+                'url': self.response.urljoin(image.attrib['src']) if 'src' in image.attrib.keys() else '',
                 'title': image.attrib.get('alt', '')
-            }
+            })
 
         data = {
             'url': url,
             'domain': domain,
             'path': path,
-            'title': title.lower(),
-            'description': description.lower(),
-            'h1': h1,
+            'title': title,
+            'description': description,
             'image': imagedata,
             'parent': parent,
             'level': level,
@@ -65,6 +64,7 @@ class ExtraxtPage():
             else:
                 visited_collection.insert_one(data)
         except:
-            query = {"url": "url"}
+            query = {"url": url}
+            data.pop('_id', None)
             newdata = {"$set": data}
             visited_collection.update_one(query, newdata)

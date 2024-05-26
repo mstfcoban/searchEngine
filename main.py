@@ -2,6 +2,7 @@ import json
 import validators
 from scrapy.crawler import CrawlerProcess
 
+
 from crawler.crawler.spiders.firstCrawler import Crawling
 from database import seed_collection, visited_collection
 

@@ -14,10 +14,10 @@ class Crawling(CrawlSpider):
     }
 
     rules = [
+        Rule(LinkExtractor(allow="company/", unique=True), callback='parse_item', follow=True),
+        Rule(LinkExtractor(allow="profile/", unique=True), callback='parse_item', follow=True),
+        Rule(LinkExtractor(allow="browsecompanies.html", unique=True), callback='parse_item', follow=True),
         Rule(LinkExtractor(unique=True), callback='parse_item', follow=True),
-        #Rule(LinkExtractor(allow="company/", unique=True), callback='parse_item', follow=True),
-        #Rule(LinkExtractor(allow="profile/", unique=True), callback='parse_item', follow=True),
-        #Rule(LinkExtractor(allow="browsecompanies.html", unique=True), callback='parse_item', follow=True),
     ]
 
     def __init__(self, seeds=None, *args, **kwargs):
