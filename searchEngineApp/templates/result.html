@@ -95,13 +95,6 @@
                 </h3>
                 <p class="overflow-hidden" style="height:80px; line-height:20px; display:-webkit-box; -webkit-line-clamp:4; -webkit-box-orient:vertical;">{{ x.description }}</p>
                 <p><a href="{{ x.url }}" target="_blank" class="learn-more">Go To Page</a></p>
-                <p class="text-end mb-0" style="font-family: 'Flaticon'; font-size: smaller;">
-                  {%if x.parent == 'google_api' %}
-                    found by Google
-                  {%else%}
-                    found by COsea
-                  {%endif%}
-                </p>
               </div>
             </div>
           {% endfor %}
