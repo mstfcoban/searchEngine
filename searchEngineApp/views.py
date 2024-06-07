@@ -5,16 +5,19 @@ from django.views.decorators.csrf import csrf_exempt
 from analysisPage import setWord, removeStopWords, lemmatization, calculateScore, calculateTFIDF, rankeAlgo, Ner
 import asyncio
 from googleSearch import *
+from main import run_crawler
 
 from database import visited_collection
 import wordsegment
 wordsegment.load()
 
 @csrf_exempt
-def home(request):
+async def home(request):
     template = loader.get_template('index.html')
 
     context = {}
+
+    asyncio.create_task(run_crawler())
 
     return HttpResponse(template.render(context, request))
 
